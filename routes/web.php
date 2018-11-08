@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::get('welcome', function () {
     return view('welcome');
 });
-Route::get('hello/{name}', function ($name) {
+Route::get('hello/{name?}', ['as'=>'hello.index', function ($name='Everybody') {
     return 'Hello, '.$name;
-});
-});
+
+}]);
