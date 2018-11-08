@@ -15,8 +15,8 @@ Route::get('/', function () {
     return redirect('welcome');
 });
 
-Route::get('/',['as'=>'home.index','uses'=>
-'HomeController@index']);
+//Route::get('/', ['as'=>'home.index', 'uses'=>'HomeController@index']);
+Route::get('/', 'HomeController@index')->name('home.index');
 
 Route::get('say/{name?}', ['as'=>'hello.index', function ($name='Everybody') {
     return 'Hello, '.$name;
